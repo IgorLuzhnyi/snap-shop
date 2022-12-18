@@ -1,8 +1,11 @@
-import "./navigation.styles.scss";
+import "./navigation.scss";
 import { Fragment, useContext } from "react";
 import { Outlet, Link } from "react-router-dom";
 import snapLogo from "../../assets/snap.png";
+import CartIcon from "../../components/cart-icon/cart-icon";
+import CartDropdown from "../../components/cart-dropdown/cart-dropdown";
 import { UserContext } from "../../contexts/user.context";
+import { CartContext } from "../../contexts/cart.context";
 import { signOutUser } from "../../utils/firebase/firebase.utils";
 
 const Navigation = () => {
@@ -27,7 +30,9 @@ const Navigation = () => {
               Sign In
             </Link>
           )}
+          <CartIcon />
         </div>
+        <CartDropdown />
       </div>
       <Outlet />
     </Fragment>
